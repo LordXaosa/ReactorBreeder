@@ -136,7 +136,7 @@
             this.resultTb.ReadOnly = true;
             this.resultTb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.resultTb.Size = new System.Drawing.Size(381, 388);
-            this.resultTb.TabIndex = 4;
+            this.resultTb.TabIndex = 10;
             // 
             // progressPb
             // 

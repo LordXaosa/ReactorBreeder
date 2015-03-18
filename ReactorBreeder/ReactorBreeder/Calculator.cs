@@ -53,24 +53,10 @@ namespace ReactorBreeder
                 {
                     for (int z = 0; z < Z; z++)
                     {
-                        reactors[x, y, z] = array[rnd.Next(1024)] < array[rnd2.Next(1024)]/divider;
+                        reactors[x, y, z] = array[rnd.Next(1024)] < array[rnd2.Next(1024)]/divider;//wierd random, but default sucks...
                     }
                 }
             }
-            /*bool temp = rnd.Next(2000001) <= 1000000;
-            for (int x = 0; x < X; x++)
-            {
-                for (int y = 0; y < Y; y++)
-                {
-                    for (int z = 0; z < Z; z++)
-                    {
-                        if (temp && !reactors[x, y, z] && rnd.Next(2000001) >= 1000000)
-                        {
-                            reactors[x, y, z] = true;
-                        }
-                    }
-                }
-            }*/
 
             reactorsChecked = new bool[X, Y, Z];
             for (int x = 0; x < X; x++)
@@ -200,10 +186,6 @@ namespace ReactorBreeder
 
                 }
                 groups.Add(group);
-                /*if (!groups.Contains(group))
-                {
-                    groups.Add(group);
-                }*/
             }
         }
 
