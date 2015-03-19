@@ -20,6 +20,8 @@ namespace ReactorBreeder
         public string result = "";
         public string resultPic = "";
 
+        public int Blocks, Groups;
+
         int maxx, maxy, maxz;
 
         public Calculator(int x, int y, int z, int max, int cycles)
@@ -74,12 +76,19 @@ namespace ReactorBreeder
             }
             double sum = 0;
             int blocks = 0;
+
+            blocks = groups.Sum(s => s.Blocks);
+            int blockPower = blocks * 25;
+            double groupSumPower = 0.0;
             foreach (Group g in groups)
             {
                 float dims = g.MaxX - g.MinX + g.MaxY - g.MinY + g.MaxZ - g.MinZ + 3;
-                sum += (2000000.0f / (1.0f + Math.Pow(1.000696f, (-0.333f * Math.Pow((dims / 3.0f), 1.7)))) - 1000000.0f + 25.0f * g.Blocks);
-                blocks += g.Blocks;
+                groupSumPower += Math.Pow((dims / 3.0f), 1.7f);
             }
+
+            double groupsSizeSumPower = 2000000.0f / (1 + Math.Pow(1.000696, -0.333f * groupSumPower)) - 1000000;
+
+            sum = groupsSizeSumPower + blockPower;
 
             if (sum > maxEnergy)
             {
@@ -87,7 +96,10 @@ namespace ReactorBreeder
 
                 reactorsMax = reactors;
 
-                result = maxEnergy.ToString() + " (" + blocks + " blocks) (" + groups.Count + " groups)";
+                Blocks = blocks;
+                Groups = groups.Count;
+
+                result = maxEnergy.ToString("N2") + " (" + blocks + " blocks) (" + groups.Count + " groups) ("+(sum/blocks).ToString("N2") + " energy per block)";
                 StringBuilder sb = new StringBuilder();
                 resultPic = "";
 

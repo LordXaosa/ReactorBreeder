@@ -26,6 +26,8 @@ namespace ReactorBreeder
         public static int maximum = 0;
         string result, resultPic;
 
+        int blocks,groups;
+
         int x, y, z;
 
         bool online = false;
@@ -131,6 +133,9 @@ namespace ReactorBreeder
                         result = calcs[i].result;
                         resultPic = calcs[i].resultPic;
 
+                        blocks = calcs[i].Blocks;
+                        groups = calcs[i].Groups;
+
                         resultArray = new bool[x][][];
                         for (int ix = 0; ix < x; ix++)
                         {
@@ -163,6 +168,8 @@ namespace ReactorBreeder
                 {
                     webMax = max;
                 }
+                int.TryParse(file.Split('|')[3], out blocks);
+                int.TryParse(file.Split('|')[4], out groups);
                 resultLbl.Text = result;
                 resultTb.Text = resultPic;
             }
@@ -170,7 +177,7 @@ namespace ReactorBreeder
 
         private void SaveFile(int x, int y, int z)
         {
-            File.WriteAllText(string.Format("{0}-{1}-{2}.txt", x, y, z), string.Format("{0}|{1}|{2}", max, result, resultPic));
+            File.WriteAllText(string.Format("{0}-{1}-{2}.txt", x, y, z), string.Format("{0}|{1}|{2}|{3}|{4}", max, result, resultPic, blocks, groups));
         }
 
         private void timer1_Tick(object sender, EventArgs e)

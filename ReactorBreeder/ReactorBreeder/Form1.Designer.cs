@@ -86,28 +86,28 @@
             // 
             this.xTb.Location = new System.Drawing.Point(80, 6);
             this.xTb.Name = "xTb";
-            this.xTb.Size = new System.Drawing.Size(192, 20);
+            this.xTb.Size = new System.Drawing.Size(400, 20);
             this.xTb.TabIndex = 1;
             // 
             // yTb
             // 
             this.yTb.Location = new System.Drawing.Point(80, 32);
             this.yTb.Name = "yTb";
-            this.yTb.Size = new System.Drawing.Size(192, 20);
+            this.yTb.Size = new System.Drawing.Size(400, 20);
             this.yTb.TabIndex = 2;
             // 
             // zTb
             // 
             this.zTb.Location = new System.Drawing.Point(80, 58);
             this.zTb.Name = "zTb";
-            this.zTb.Size = new System.Drawing.Size(192, 20);
+            this.zTb.Size = new System.Drawing.Size(400, 20);
             this.zTb.TabIndex = 3;
             // 
             // cyclesTb
             // 
             this.cyclesTb.Location = new System.Drawing.Point(80, 84);
             this.cyclesTb.Name = "cyclesTb";
-            this.cyclesTb.Size = new System.Drawing.Size(192, 20);
+            this.cyclesTb.Size = new System.Drawing.Size(400, 20);
             this.cyclesTb.TabIndex = 4;
             // 
             // resultLbl
@@ -122,7 +122,7 @@
             // 
             this.startBtn.Location = new System.Drawing.Point(13, 135);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(259, 23);
+            this.startBtn.Size = new System.Drawing.Size(467, 23);
             this.startBtn.TabIndex = 5;
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
@@ -130,7 +130,9 @@
             // 
             // resultTb
             // 
-            this.resultTb.Location = new System.Drawing.Point(278, 6);
+            this.resultTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultTb.Location = new System.Drawing.Point(486, 6);
             this.resultTb.Multiline = true;
             this.resultTb.Name = "resultTb";
             this.resultTb.ReadOnly = true;
@@ -142,7 +144,7 @@
             // 
             this.progressPb.Location = new System.Drawing.Point(15, 165);
             this.progressPb.Name = "progressPb";
-            this.progressPb.Size = new System.Drawing.Size(257, 23);
+            this.progressPb.Size = new System.Drawing.Size(465, 23);
             this.progressPb.TabIndex = 5;
             // 
             // timer1
@@ -175,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 406);
+            this.ClientSize = new System.Drawing.Size(879, 406);
             this.Controls.Add(this.continousCb);
             this.Controls.Add(this.sendCb);
             this.Controls.Add(this.progressPb);
