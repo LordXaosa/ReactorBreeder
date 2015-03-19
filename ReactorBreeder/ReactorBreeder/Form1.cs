@@ -111,7 +111,7 @@ namespace ReactorBreeder
 
             Thread tr = new Thread(() =>
             {
-                List<Calculator> calcs = new List<Calculator>();
+                List<Calculator> calcs = new List<Calculator>(x*y*z);
 
                 Parallel.For(0, Environment.ProcessorCount, (i) =>
                 {
@@ -121,6 +121,10 @@ namespace ReactorBreeder
 
                 for (int i = 0; i < calcs.Count; i++)
                 {
+                    if(calcs[i] == null)
+                    {
+                        continue;
+                    }
                     if (max < calcs[i].maxEnergy)
                     {
                         max = (int)calcs[i].maxEnergy;

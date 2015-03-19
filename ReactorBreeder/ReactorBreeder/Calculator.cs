@@ -99,11 +99,11 @@ namespace ReactorBreeder
                         {
                             if (reactors[x, y, z])
                             {
-                                sb.Append("⬛");
+                                sb.Append("■");
                             }
                             else
                             {
-                                sb.Append("⛶");
+                                sb.Append("☐");
                             }
                         }
                         sb.Append(Environment.NewLine);
