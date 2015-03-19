@@ -88,6 +88,7 @@
             this.xTb.Name = "xTb";
             this.xTb.Size = new System.Drawing.Size(400, 20);
             this.xTb.TabIndex = 1;
+            this.xTb.TextChanged += new System.EventHandler(this.xTb_TextChanged);
             // 
             // yTb
             // 
@@ -95,6 +96,7 @@
             this.yTb.Name = "yTb";
             this.yTb.Size = new System.Drawing.Size(400, 20);
             this.yTb.TabIndex = 2;
+            this.yTb.TextChanged += new System.EventHandler(this.xTb_TextChanged);
             // 
             // zTb
             // 
@@ -102,6 +104,7 @@
             this.zTb.Name = "zTb";
             this.zTb.Size = new System.Drawing.Size(400, 20);
             this.zTb.TabIndex = 3;
+            this.zTb.TextChanged += new System.EventHandler(this.xTb_TextChanged);
             // 
             // cyclesTb
             // 

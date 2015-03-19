@@ -26,7 +26,7 @@ namespace ReactorBreeder
         public static int maximum = 0;
         string result, resultPic;
 
-        int blocks,groups;
+        int blocks, groups;
 
         int x, y, z;
 
@@ -113,7 +113,7 @@ namespace ReactorBreeder
 
             Thread tr = new Thread(() =>
             {
-                List<Calculator> calcs = new List<Calculator>(x*y*z);
+                List<Calculator> calcs = new List<Calculator>(x * y * z);
 
                 Parallel.For(0, Environment.ProcessorCount, (i) =>
                 {
@@ -123,7 +123,7 @@ namespace ReactorBreeder
 
                 for (int i = 0; i < calcs.Count; i++)
                 {
-                    if(calcs[i] == null)
+                    if (calcs[i] == null)
                     {
                         continue;
                     }
@@ -250,6 +250,17 @@ namespace ReactorBreeder
                     cyclesTb.Enabled = true;
                 }
             }
+        }
+
+        private void xTb_TextChanged(object sender, EventArgs e)
+        {
+            max = 0;
+            webMax = 0;
+            current = 0;
+            maximum = 0;
+            result = "";
+            resultPic = "";
+            resultArray = null;
         }
     }
     public class Group
