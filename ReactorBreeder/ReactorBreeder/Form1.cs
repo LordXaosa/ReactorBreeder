@@ -28,13 +28,16 @@ namespace ReactorBreeder
 
         int blocks, groups;
 
-        int x, y, z;
+        int x, y, z, cycles;
 
         bool online = false;
 
         bool finished = true;
 
         bool arrayGenerated = true;
+
+        decimal cyclesPerSecond;
+        Stopwatch sw = new Stopwatch();
 
         bool[][][] resultArray;
 
@@ -45,7 +48,7 @@ namespace ReactorBreeder
             x = int.Parse(xTb.Text);
             y = int.Parse(yTb.Text);
             z = int.Parse(zTb.Text);
-            int cycles = int.Parse(cyclesTb.Text);
+            cycles = int.Parse(cyclesTb.Text);
 
             if (x > 100 || y > 100 || z > 100)
             {
@@ -63,6 +66,8 @@ namespace ReactorBreeder
 
         private void Start()
         {
+            sw.Reset();
+            sw.Start();
             startBtn.Enabled = false;
             startBtn.Text = "Getting info...";
             finished = false;
@@ -235,6 +240,12 @@ namespace ReactorBreeder
                             }
                         }
                     }
+                    sw.Stop();
+                    if (sw.ElapsedMilliseconds > 0)
+                    {
+                        cyclesPerSecond = ((decimal)(cycles * Environment.ProcessorCount) / (decimal)sw.ElapsedMilliseconds) * 1000.0m;
+                    }
+                    timeLb.Text = string.Format("Current speed: {0:N0} cycles per second", cyclesPerSecond);
                     if (continousCb.Checked)
                     {
                         Start();

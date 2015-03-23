@@ -44,6 +44,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sendCb = new System.Windows.Forms.CheckBox();
             this.continousCb = new System.Windows.Forms.CheckBox();
+            this.timeLb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -176,11 +177,21 @@
             this.continousCb.Text = "Continuos";
             this.continousCb.UseVisualStyleBackColor = true;
             // 
+            // timeLb
+            // 
+            this.timeLb.AutoSize = true;
+            this.timeLb.Location = new System.Drawing.Point(15, 242);
+            this.timeLb.Name = "timeLb";
+            this.timeLb.Size = new System.Drawing.Size(174, 13);
+            this.timeLb.TabIndex = 11;
+            this.timeLb.Text = "Current speed: 0 cycles per second";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 406);
+            this.Controls.Add(this.timeLb);
             this.Controls.Add(this.continousCb);
             this.Controls.Add(this.sendCb);
             this.Controls.Add(this.progressPb);
@@ -219,6 +230,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox sendCb;
         private System.Windows.Forms.CheckBox continousCb;
+        private System.Windows.Forms.Label timeLb;
     }
 }
 
