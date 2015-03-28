@@ -35,7 +35,8 @@ namespace ReactorBreeder
         bool finished = true;
 
         bool arrayGenerated = true;
-
+        int free = 0;
+        double shieldCap, shieldRecharge;
         decimal cyclesPerSecond;
         Stopwatch sw = new Stopwatch();
 
@@ -175,9 +176,25 @@ namespace ReactorBreeder
                 }
                 int.TryParse(file.Split('|')[3], out blocks);
                 int.TryParse(file.Split('|')[4], out groups);
-                resultLbl.Text = result;
-                resultTb.Text = resultPic;
+                PopulateGUI();
             }
+        }
+
+        private void PopulateGUI()
+        {
+            resultLbl.Text = result;
+            resultTb.Text = resultPic;
+            CalculateShields();
+            scLb.Text = string.Format("Shield capacity: {0:N2} ({1} blocks)", shieldCap, free);
+            srLb.Text = string.Format("Shield recharge per second: {0:N2} ({1} blocks)", shieldRecharge, free);
+            freeLb.Text = string.Format("Free space: {0} blocks", free);
+        }
+
+        private void CalculateShields()
+        {
+            free = (x * y * z) - blocks;
+            shieldCap = Math.Pow(free, 0.9791797578)*110.0 + 220;
+            shieldRecharge = free*5.5;
         }
 
         private void SaveFile(int x, int y, int z)
@@ -201,8 +218,7 @@ namespace ReactorBreeder
 
                     if (max > webMax)
                     {
-                        resultLbl.Text = result;
-                        resultTb.Text = resultPic;
+                        PopulateGUI();
                         webMax = max;
                         startBtn.Text = "Saving file...";
                         Application.DoEvents();

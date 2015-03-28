@@ -45,6 +45,9 @@
             this.sendCb = new System.Windows.Forms.CheckBox();
             this.continousCb = new System.Windows.Forms.CheckBox();
             this.timeLb = new System.Windows.Forms.Label();
+            this.freeLb = new System.Windows.Forms.Label();
+            this.scLb = new System.Windows.Forms.Label();
+            this.srLb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -186,11 +189,41 @@
             this.timeLb.TabIndex = 11;
             this.timeLb.Text = "Current speed: 0 cycles per second";
             // 
+            // freeLb
+            // 
+            this.freeLb.AutoSize = true;
+            this.freeLb.Location = new System.Drawing.Point(15, 255);
+            this.freeLb.Name = "freeLb";
+            this.freeLb.Size = new System.Drawing.Size(106, 13);
+            this.freeLb.TabIndex = 11;
+            this.freeLb.Text = "Free space: 0 blocks";
+            // 
+            // scLb
+            // 
+            this.scLb.AutoSize = true;
+            this.scLb.Location = new System.Drawing.Point(15, 268);
+            this.scLb.Name = "scLb";
+            this.scLb.Size = new System.Drawing.Size(91, 13);
+            this.scLb.TabIndex = 11;
+            this.scLb.Text = "Shield capacity: 0";
+            // 
+            // srLb
+            // 
+            this.srLb.AutoSize = true;
+            this.srLb.Location = new System.Drawing.Point(15, 281);
+            this.srLb.Name = "srLb";
+            this.srLb.Size = new System.Drawing.Size(149, 13);
+            this.srLb.TabIndex = 11;
+            this.srLb.Text = "Shield recharge per second: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 406);
+            this.Controls.Add(this.srLb);
+            this.Controls.Add(this.scLb);
+            this.Controls.Add(this.freeLb);
             this.Controls.Add(this.timeLb);
             this.Controls.Add(this.continousCb);
             this.Controls.Add(this.sendCb);
@@ -231,6 +264,9 @@
         private System.Windows.Forms.CheckBox sendCb;
         private System.Windows.Forms.CheckBox continousCb;
         private System.Windows.Forms.Label timeLb;
+        private System.Windows.Forms.Label freeLb;
+        private System.Windows.Forms.Label scLb;
+        private System.Windows.Forms.Label srLb;
     }
 }
 
